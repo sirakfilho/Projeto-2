@@ -41,44 +41,43 @@ COMMAND
 
 ### Exemplo: 
 
-##IMPLEMENTANDO INTERFACE COMMAND
-#1-public interface Command {
-#2-
-#3-	public void execute();
-#4-
-#5-}
+IMPLEMENTANDO INTERFACE COMMAND
+public interface Command {
 
+	public void execute();
 
-##IMPLEMENTANDO O COMMAND
-#1-public class LightOnCommand implements Command { 
-#2-
-#3-	Light light;
-#4-
-#5-	public LightOnCommand(Light light) {
-#6-		this.light = light;
-#7-	}
-#8-
-#9-	public void execute() {
-#10-		light.on();
-#11-	}
-#12-}
+}
 
-##IMPLEMENTANDO CONTROLE REMOTO QUE INVOCARÁ O COMMAND
-#1-public class ControleRemoto { 
-#2-
-#3-	Command slot;
-#4-
-#5-	public ControleRemoto() {
-#6-	}
-#7-
-#8-	public void setCommand(Command command) {
-#9-		slot = command;
-#10-	}
-#11-
-#12-	public void botaoPressionado() {
-#13-		slot.execute();
-#14-	}
-#15-
-#16-}
+IMPLEMENTANDO O COMMAND
+public class LightOnCommand implements Command { 
+
+	Light light;
+
+	public LightOnCommand(Light light) {
+		this.light = light;
+	}
+
+public void execute() {
+		light.on();
+	}
+}
+
+IMPLEMENTANDO CONTROLE REMOTO QUE INVOCARÁ O COMMAND
+public class ControleRemoto { 
+
+	Command slot;
+  
+	public ControleRemoto() {
+	}
+
+public void setCommand(Command command) {
+		slot = command;
+	}
+  
+public void botaoPressionado() {
+		slot.execute();
+	}
+
+}
 
 
